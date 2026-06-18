@@ -143,6 +143,11 @@ section{padding:64px 0;scroll-margin-top:80px}
 .timeline::before{content:"";position:absolute;left:6px;top:6px;bottom:6px;width:2px;background:linear-gradient(180deg,var(--accent),var(--accent-2),transparent)}
 .job{position:relative;margin-bottom:38px}
 .job::before{content:"";position:absolute;left:-30px;top:6px;width:14px;height:14px;border-radius:50%;background:var(--bg);border:3px solid var(--accent);box-shadow:0 0 0 4px rgba(56,189,248,.12)}
+.job-head{display:flex;gap:15px;align-items:flex-start}
+.logo-chip{width:52px;height:52px;border-radius:13px;background:#fff;display:grid;place-items:center;flex-shrink:0;padding:7px;border:1px solid var(--border);box-shadow:0 6px 18px -8px rgba(0,0,0,.6)}
+.logo-chip img{max-width:100%;max-height:100%;object-fit:contain}
+.logo-chip.mono{background:var(--grad);color:#05080f;font-weight:800;font-size:1.15rem;font-family:'JetBrains Mono',monospace;padding:0}
+.job-head-text{flex:1;min-width:0}
 .job-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:8px}
 .job h3{font-size:1.18rem;font-weight:700}
 .job .co{color:var(--accent);font-weight:600}
@@ -155,6 +160,19 @@ section{padding:64px 0;scroll-margin-top:80px}
 .proj p{color:var(--muted);font-size:.94rem}
 .proj .chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
 .proj .chips span{font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--muted);background:var(--bg-soft);border:1px solid var(--border);padding:3px 8px;border-radius:6px}
+
+/* LINKS */
+a.co{transition:.2s;border-bottom:1px solid transparent}
+a.co:hover{border-bottom-color:var(--accent)}
+.proj .pt a{color:inherit;display:inline-flex;align-items:center;gap:6px;transition:.2s}
+.proj .pt a:hover{color:var(--accent)}
+.ext{width:13px;height:13px;opacity:.65;flex-shrink:0}
+.uni a{color:var(--accent);border-bottom:1px solid transparent;transition:.2s}
+.uni a:hover{border-bottom-color:var(--accent)}
+.socials{display:flex;gap:12px;margin-top:26px}
+.socials a{width:44px;height:44px;display:grid;place-items:center;border:1px solid var(--border);border-radius:11px;background:var(--card);color:var(--muted);transition:.22s}
+.socials a:hover{color:var(--accent);border-color:var(--accent);transform:translateY(-2px)}
+.socials a svg{width:20px;height:20px}
 
 /* FEATURED */
 .feat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
@@ -173,8 +191,11 @@ section{padding:64px 0;scroll-margin-top:80px}
 @media(max-width:760px){.two-col{grid-template-columns:1fr}}
 .panel{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:26px;height:100%}
 .panel h3{font-size:1.1rem;font-weight:700;margin-bottom:20px;display:flex;align-items:center;gap:9px}
-.edu-item{padding:14px 0;border-bottom:1px solid var(--border)}
+.edu-item{padding:14px 0;border-bottom:1px solid var(--border);display:flex;gap:13px;align-items:center}
 .edu-item:last-child{border-bottom:none}
+.edu-logo{width:46px;height:46px;border-radius:11px;background:#fff;display:grid;place-items:center;flex-shrink:0;padding:5px;border:1px solid var(--border)}
+.edu-logo img{max-width:100%;max-height:100%;object-fit:contain}
+.edu-logo.mono{background:var(--grad);color:#05080f;font-weight:800;font-size:.95rem;font-family:'JetBrains Mono',monospace;padding:0}
 .edu-item .deg{font-weight:600}
 .edu-item .uni{color:var(--muted);font-size:.92rem;margin-top:2px}
 .lang-item{margin-bottom:18px}
@@ -237,6 +258,15 @@ footer{padding:34px 0;border-top:1px solid var(--border);text-align:center;color
       <span><svg viewBox="0 0 24 24"><path d="M12 21s-7-5.2-7-11a7 7 0 0114 0c0 5.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg> Damascus, Syria · Remote-ready</span>
       <span><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg> Bahaa.Ebraheem812@Gmail.com</span>
       <span><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.8 19.8 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg> +963 991 640 012</span>
+    </div>
+
+    <div class="socials">
+      <a href="https://github.com/BahaaEbraheem" target="_blank" rel="noopener" title="GitHub" aria-label="GitHub">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.37.5 0 5.78 0 12.29c0 5.2 3.44 9.6 8.21 11.16.6.11.82-.25.82-.56v-2.2c-3.34.71-4.04-1.58-4.04-1.58-.55-1.36-1.33-1.73-1.33-1.73-1.09-.73.08-.72.08-.72 1.2.08 1.83 1.22 1.83 1.22 1.07 1.8 2.81 1.28 3.5.98.11-.76.42-1.28.76-1.58-2.67-.3-5.47-1.31-5.47-5.83 0-1.29.47-2.34 1.24-3.17-.12-.3-.54-1.52.12-3.17 0 0 1.01-.32 3.3 1.21a11.5 11.5 0 016 0c2.29-1.53 3.3-1.21 3.3-1.21.66 1.65.24 2.87.12 3.17.77.83 1.23 1.88 1.23 3.17 0 4.53-2.81 5.53-5.49 5.82.43.37.81 1.1.81 2.22v3.29c0 .31.22.68.83.56A12.04 12.04 0 0024 12.29C24 5.78 18.63.5 12 .5z"/></svg>
+      </a>
+      <a href="https://www.linkedin.com/in/bahaa-ebraheem-992443354/" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 110-4.13 2.06 2.06 0 010 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+      </a>
     </div>
 
     <div class="stats">
@@ -341,65 +371,100 @@ footer{padding:34px 0;border-top:1px solid var(--border);text-align:center;color
     <div class="timeline">
 
       <div class="job reveal">
-        <div class="job-top">
-          <h3>Senior Full Stack Developer · <span class="co">HA Consultancy</span></h3>
-          <span class="when">01/2026 – Present</span>
+        <div class="job-head">
+          <div class="logo-chip"><img src="assets/ha.png" alt="HA Consultancy logo" loading="lazy"></div>
+          <div class="job-head-text">
+            <div class="job-top">
+              <h3>Senior Full Stack Developer · <a class="co" href="https://ha-consultancy.com/" target="_blank" rel="noopener">HA Consultancy ↗</a></h3>
+              <span class="when">01/2026 – Present</span>
+            </div>
+            <div class="loc">UAE · Remote</div>
+          </div>
         </div>
-        <div class="loc">UAE · Remote</div>
         <div class="proj">
-          <div class="pt">New Look <span class="badge">AI · SaaS</span></div>
+          <div class="pt"><a href="https://newlook.ha-consultancy.com/" target="_blank" rel="noopener">New Look <svg class="ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></a> <span class="badge">AI · SaaS</span></div>
           <p>AI-powered grooming &amp; salon-management platform (a Fresha alternative) with smart consultations and quality control. Integrated Google Gemini 3.1 (Pro + image model) to generate 8 personalized hairstyle suggestions from 6-angle client photos, plus AI face-shape analysis and AI-driven service plans. Real-time updates, WhatsApp Business API delivery, multi-branch role-based access, and an Electron chair-station with OBSBot camera.</p>
           <div class="chips"><span>ASP.NET Core</span><span>React 19</span><span>TypeScript</span><span>SignalR</span><span>Google Gemini</span><span>Electron</span></div>
         </div>
       </div>
 
       <div class="job reveal">
-        <div class="job-top">
-          <h3>Senior Full Stack Developer · <span class="co">NETAQ For E-Solutions</span></h3>
-          <span class="when">01/2025 – 06/2026</span>
+        <div class="job-head">
+          <div class="logo-chip"><img src="assets/netaq.jpg" alt="NETAQ logo" loading="lazy"></div>
+          <div class="job-head-text">
+            <div class="job-top">
+              <h3>Senior Full Stack Developer · <a class="co" href="https://netaq.ae/" target="_blank" rel="noopener">NETAQ For E-Solutions ↗</a></h3>
+              <span class="when">01/2025 – 06/2026</span>
+            </div>
+            <div class="loc">Abu Dhabi, UAE · Remote</div>
+          </div>
         </div>
-        <div class="loc">Abu Dhabi, UAE · Remote</div>
         <div class="proj">
-          <div class="pt">Emirates Arabian Horses Society (EAHS)</div>
+          <div class="pt"><a href="https://eahs.ae/" target="_blank" rel="noopener">Emirates Arabian Horses Society (EAHS) <svg class="ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></a></div>
           <p>Architected a scalable backend using ASP.NET Core 10 with Umbraco 17 CMS. Built a modern React frontend and cross-platform mobile apps with Flutter.</p>
           <div class="chips"><span>ASP.NET Core 10</span><span>Umbraco 17</span><span>React</span><span>Flutter</span></div>
         </div>
         <div class="proj">
-          <div class="pt">Stallions Semen Market <span class="badge">High-traffic</span></div>
+          <div class="pt"><a href="https://site.eahs.ae:8016/SemenMarket/" target="_blank" rel="noopener">Stallions Semen Market <svg class="ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></a> <span class="badge">High-traffic</span></div>
           <p>High-performance backend with ASP.NET Core MVC. Applied idempotency keys, row-level locking, and concurrency-safe transaction logic to guarantee accurate dose selling and eliminate race conditions under heavy load.</p>
           <div class="chips"><span>ASP.NET Core MVC</span><span>Concurrency</span><span>Idempotency</span></div>
         </div>
         <div class="proj">
-          <div class="pt">Abu Dhabi Excellence Award Portal</div>
+          <div class="pt"><a href="https://portal.damj.gov.ae/" target="_blank" rel="noopener">Abu Dhabi Excellence Award Portal <svg class="ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></a></div>
           <p>Scalable backend with ASP.NET Core 10 + Umbraco 17 CMS and a modern React frontend. GraphQL unified API layer for optimized querying, REST endpoints for backward compatibility, OpenTelemetry for distributed tracing &amp; metrics, and a toggleable per-client CMS plugin.</p>
           <div class="chips"><span>ASP.NET Core 10</span><span>GraphQL</span><span>OpenTelemetry</span><span>Umbraco 17</span></div>
         </div>
         <div class="proj">
-          <div class="pt">Government Award Platforms</div>
-          <p>Developed and enhanced core modules across multiple national initiatives: <strong>Fatima Bint Mubarak Women Sport Award</strong>, <strong>Individual Excellence Medals Award</strong>, <strong>Khalifa Award for Education</strong>, and <strong>Kanz Al Jeel</strong> — improving submission workflows and evaluation processes.</p>
+          <div class="pt"><a href="https://himma.atlasapps.net/" target="_blank" rel="noopener">Fatima Bint Mubarak Women Sport Award <svg class="ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></a></div>
+          <p>Developed and enhanced key modules of the award platform using ASP.NET Core MVC, supporting a regional initiative that celebrates and empowers women in sports.</p>
           <div class="chips"><span>ASP.NET Core MVC</span><span>Enterprise</span></div>
+        </div>
+        <div class="proj">
+          <div class="pt"><a href="https://internalaward.adsc.gov.ae/" target="_blank" rel="noopener">Individual Excellence Medals Award <svg class="ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></a></div>
+          <p>Developed core components of the award platform using ASP.NET Core MVC, supporting a national initiative that recognizes outstanding individual achievements.</p>
+          <div class="chips"><span>ASP.NET Core MVC</span><span>Government</span></div>
+        </div>
+        <div class="proj">
+          <div class="pt"><a href="https://el.khaward.ae/" target="_blank" rel="noopener">Khalifa Award for Education <svg class="ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></a></div>
+          <p>Developed key backend and frontend components for the Khalifa Award for Education platform using ASP.NET Core MVC, improving submission workflows and evaluation processes.</p>
+          <div class="chips"><span>ASP.NET Core MVC</span><span>Full Stack</span></div>
+        </div>
+        <div class="proj">
+          <div class="pt"><a href="https://kanzaljeel.ae/" target="_blank" rel="noopener">Kanz Al Jeel <svg class="ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></a></div>
+          <p>Developed and enhanced core modules of the award platform using ASP.NET Core MVC — a cultural initiative by the Abu Dhabi Arabic Language Centre honoring Nabati poetry, folkloric studies, and the region's poetic heritage.</p>
+          <div class="chips"><span>ASP.NET Core MVC</span><span>Cultural</span></div>
         </div>
       </div>
 
       <div class="job reveal">
-        <div class="job-top">
-          <h3>Senior Full Stack Developer · <span class="co">MIS Solutions</span></h3>
-          <span class="when">09/2022 – 10/2025</span>
+        <div class="job-head">
+          <div class="logo-chip"><img src="assets/mis.jpg" alt="MIS Solutions logo" loading="lazy"></div>
+          <div class="job-head-text">
+            <div class="job-top">
+              <h3>Senior Full Stack Developer · <a class="co" href="https://mis-sy.com/" target="_blank" rel="noopener">MIS Solutions ↗</a></h3>
+              <span class="when">09/2022 – 10/2025</span>
+            </div>
+            <div class="loc">Damascus, Syria</div>
+          </div>
         </div>
-        <div class="loc">Damascus, Syria</div>
         <div class="proj">
-          <div class="pt">EMPS — Remittance Management System <span class="badge">Microservices</span></div>
+          <div class="pt"><a href="https://emps.mis-sy.com/" target="_blank" rel="noopener">EMPS — Remittance Management System <svg class="ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></a> <span class="badge">Microservices</span></div>
           <p>Designed and implemented a microservices-based system for high availability and independent service scalability. Built with ASP.NET Core 7 and ABP Framework. Integrated Blazor WASM with SignalR for instantaneous transaction updates, and engineered a high-speed sync bridge between Blazor WASM and Windows desktop apps for industrial-grade barcode scanning &amp; printing.</p>
           <div class="chips"><span>ASP.NET Core 7</span><span>ABP Framework</span><span>Blazor WASM</span><span>SignalR</span></div>
         </div>
       </div>
 
       <div class="job reveal">
-        <div class="job-top">
-          <h3>Backend Developer · <span class="co">Solutions LLC</span></h3>
-          <span class="when">01/2019 – 06/2022</span>
+        <div class="job-head">
+          <div class="logo-chip mono">S</div>
+          <div class="job-head-text">
+            <div class="job-top">
+              <h3>Backend Developer · <span class="co">Solutions LLC</span></h3>
+              <span class="when">01/2019 – 06/2022</span>
+            </div>
+            <div class="loc">Dubai, UAE · Remote</div>
+          </div>
         </div>
-        <div class="loc">Dubai, UAE · Remote</div>
         <div class="proj">
           <div class="pt">Enterprise Web Applications</div>
           <p>Developed enterprise-level web applications using ASP.NET MVC. Optimized complex SQL Server queries and database schemas, significantly improving data retrieval performance.</p>
@@ -417,13 +482,13 @@ footer{padding:34px 0;border-top:1px solid var(--border);text-align:center;color
     <div class="feat-grid">
       <div class="feat reveal">
         <div class="ficon">🔔</div>
-        <h3>Webhook Service</h3>
+        <h3><a href="https://github.com/BahaaEbraheem/webhook-service" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:7px">Webhook Service <svg class="ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></a></h3>
         <p>A scalable notification engine built with ASP.NET Core 9 and Angular. Features advanced caching, indexing, and is fully Dockerized for reliable, high-throughput delivery.</p>
         <div class="chips"><span>ASP.NET Core 9</span><span>Angular</span><span>Docker</span><span>Caching</span></div>
       </div>
       <div class="feat reveal">
         <div class="ficon">📚</div>
-        <h3>Library Management System</h3>
+        <h3><a href="https://github.com/BahaaEbraheem/e_libarry_flutter_nodejs" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:7px">Library Management System <svg class="ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></a></h3>
         <p>A full-stack solution featuring a Flutter mobile app and a Node.js / Express backend with MongoDB and JWT-based security.</p>
         <div class="chips"><span>Flutter</span><span>Node.js</span><span>Express</span><span>MongoDB</span><span>JWT</span></div>
       </div>
@@ -438,12 +503,18 @@ footer{padding:34px 0;border-top:1px solid var(--border);text-align:center;color
       <div class="panel reveal">
         <h3>🎓 Education</h3>
         <div class="edu-item">
-          <div class="deg">Master in Web Science</div>
-          <div class="uni">Syrian Virtual University · 2024</div>
+          <div class="edu-logo"><img src="assets/svu.jpg" alt="Syrian Virtual University logo" loading="lazy"></div>
+          <div>
+            <div class="deg">Master in Web Science</div>
+            <div class="uni"><a href="https://svuonline.org/" target="_blank" rel="noopener">Syrian Virtual University</a> · 2024</div>
+          </div>
         </div>
         <div class="edu-item">
-          <div class="deg">Bachelor of Software Engineering</div>
-          <div class="uni">Aleppo University · 2016 · GPA 80.1 / 100</div>
+          <div class="edu-logo mono">AU</div>
+          <div>
+            <div class="deg">Bachelor of Software Engineering</div>
+            <div class="uni"><a href="https://alepuniv.edu.sy/" target="_blank" rel="noopener">Aleppo University</a> · 2016 · GPA 80.1 / 100</div>
+          </div>
         </div>
       </div>
       <div class="panel reveal">
@@ -474,6 +545,14 @@ footer{padding:34px 0;border-top:1px solid var(--border);text-align:center;color
         <a class="btn btn-ghost" href="https://wa.me/963991640012" target="_blank">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.8 19.8 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg>
           WhatsApp
+        </a>
+        <a class="btn btn-ghost" href="https://github.com/BahaaEbraheem" target="_blank" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.37.5 0 5.78 0 12.29c0 5.2 3.44 9.6 8.21 11.16.6.11.82-.25.82-.56v-2.2c-3.34.71-4.04-1.58-4.04-1.58-.55-1.36-1.33-1.73-1.33-1.73-1.09-.73.08-.72.08-.72 1.2.08 1.83 1.22 1.83 1.22 1.07 1.8 2.81 1.28 3.5.98.11-.76.42-1.28.76-1.58-2.67-.3-5.47-1.31-5.47-5.83 0-1.29.47-2.34 1.24-3.17-.12-.3-.54-1.52.12-3.17 0 0 1.01-.32 3.3 1.21a11.5 11.5 0 016 0c2.29-1.53 3.3-1.21 3.3-1.21.66 1.65.24 2.87.12 3.17.77.83 1.23 1.88 1.23 3.17 0 4.53-2.81 5.53-5.49 5.82.43.37.81 1.1.81 2.22v3.29c0 .31.22.68.83.56A12.04 12.04 0 0024 12.29C24 5.78 18.63.5 12 .5z"/></svg>
+          GitHub
+        </a>
+        <a class="btn btn-ghost" href="https://www.linkedin.com/in/bahaa-ebraheem-992443354/" target="_blank" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 110-4.13 2.06 2.06 0 010 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+          LinkedIn
         </a>
         <a class="btn btn-ghost" href="Bahaa-Ebraheem-CV.pdf" target="_blank">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 17v2a2 2 0 002 2h12a2 2 0 002-2v-2"/></svg>
