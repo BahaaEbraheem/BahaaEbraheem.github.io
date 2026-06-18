@@ -60,6 +60,8 @@ body::after{
   mask-image:radial-gradient(circle at 50% 0%, #000 0%, transparent 70%);
   -webkit-mask-image:radial-gradient(circle at 50% 0%, #000 0%, transparent 70%);
 }
+/* interactive particle constellation background */
+#bg-particles{position:fixed;inset:0;z-index:-1;pointer-events:none}
 /* floating glow orbs */
 .orb{position:fixed;border-radius:50%;filter:blur(70px);z-index:-2;opacity:.5;pointer-events:none}
 .orb.o1{width:380px;height:380px;background:rgba(56,189,248,.30);top:-60px;left:-80px;animation:float1 14s ease-in-out infinite}
@@ -127,7 +129,19 @@ header{padding:80px 0 70px;position:relative}
 @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(52,211,153,.6)}70%{box-shadow:0 0 0 10px rgba(52,211,153,0)}100%{box-shadow:0 0 0 0 rgba(52,211,153,0)}}
 h1{font-size:clamp(2.6rem,7vw,4.6rem);font-weight:900;line-height:1.04;letter-spacing:-1.5px}
 h1 .grad{background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-.role{font-size:clamp(1.1rem,2.6vw,1.5rem);font-weight:600;color:var(--muted);margin-top:14px}
+.role{font-size:clamp(1.1rem,2.6vw,1.5rem);font-weight:600;color:var(--muted);margin-top:14px;min-height:1.6em}
+.rotate-text{background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;font-weight:800}
+.type-cursor{display:inline-block;width:3px;height:1.05em;background:var(--accent);vertical-align:-3px;margin-left:3px;animation:blink 1s steps(1) infinite;border-radius:2px}
+/* hero entrance — words rise in, staggered */
+.hero-text>*{opacity:0;transform:translateY(22px);animation:rise .65s cubic-bezier(.2,.7,.2,1) forwards}
+.hero-text>*:nth-child(1){animation-delay:.05s}
+.hero-text>*:nth-child(2){animation-delay:.15s}
+.hero-text>*:nth-child(3){animation-delay:.25s}
+.hero-text>*:nth-child(4){animation-delay:.35s}
+.hero-text>*:nth-child(5){animation-delay:.45s}
+.hero-text>*:nth-child(6){animation-delay:.55s}
+.hero-text>*:nth-child(7){animation-delay:.65s}
+@keyframes rise{to{opacity:1;transform:none}}
 .lead{max-width:660px;margin-top:22px;font-size:1.06rem;color:var(--muted)}
 .hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px}
 .btn{
@@ -262,6 +276,7 @@ footer{padding:34px 0;border-top:1px solid var(--border);text-align:center;color
 </style>
 </head>
 <body>
+<canvas id="bg-particles"></canvas>
 <div class="orb o1"></div>
 <div class="orb o2"></div>
 
@@ -285,7 +300,7 @@ footer{padding:34px 0;border-top:1px solid var(--border);text-align:center;color
     <div class="hero-text">
     <div class="eyebrow"><span class="pulse"></span> Available for opportunities</div>
     <h1>Bahaa Ebraheem<br><span class="grad">Full Stack Developer</span></h1>
-    <p class="role">Senior Full Stack Developer · ASP.NET Core · React · AI Integrations</p>
+    <p class="role">I build <span id="rotate" class="rotate-text"></span><span class="type-cursor"></span></p>
     <p class="lead">
       Mid-to-senior Full Stack Developer with <strong>5+ years</strong> of hands-on experience building
       scalable web applications. Strong in backend architecture, API integration, real-time systems,
@@ -654,6 +669,60 @@ footer{padding:34px 0;border-top:1px solid var(--border);text-align:center;color
     entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('show'); io.unobserve(e.target);} });
   },{threshold:.12});
   document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  // typewriter rotating role
+  (function(){
+    const words=["Full Stack apps.","scalable backends.",".NET & React systems.","AI-powered products.","clean architecture."];
+    const el=document.getElementById('rotate');
+    let wi=0,ci=0,del=false;
+    function type(){
+      const word=words[wi];
+      el.textContent=word.substring(0,ci);
+      if(!del){ ci++; if(ci>word.length){ del=true; setTimeout(type,1700); return; } }
+      else{ ci--; if(ci===0){ del=false; wi=(wi+1)%words.length; } }
+      setTimeout(type, del?40:95);
+    }
+    type();
+  })();
+
+  // interactive particle constellation
+  (function(){
+    const c=document.getElementById('bg-particles'), ctx=c.getContext('2d');
+    const reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let w,h,pts,mouse={x:-999,y:-999};
+    function init(){
+      const count=Math.min(95, Math.floor(w*h/15000));
+      pts=Array.from({length:count},()=>({x:Math.random()*w,y:Math.random()*h,vx:(Math.random()-.5)*.45,vy:(Math.random()-.5)*.45}));
+    }
+    function resize(){ w=c.width=innerWidth; h=c.height=innerHeight; init(); }
+    function draw(){
+      ctx.clearRect(0,0,w,h);
+      for(const p of pts){
+        p.x+=p.vx; p.y+=p.vy;
+        if(p.x<0||p.x>w)p.vx*=-1;
+        if(p.y<0||p.y>h)p.vy*=-1;
+      }
+      for(let i=0;i<pts.length;i++){
+        const p=pts[i];
+        ctx.beginPath(); ctx.arc(p.x,p.y,1.7,0,Math.PI*2);
+        ctx.fillStyle='rgba(56,189,248,.6)'; ctx.fill();
+        for(let j=i+1;j<pts.length;j++){
+          const q=pts[j], dx=p.x-q.x, dy=p.y-q.y, d=Math.hypot(dx,dy);
+          if(d<135){ ctx.beginPath(); ctx.moveTo(p.x,p.y); ctx.lineTo(q.x,q.y);
+            ctx.strokeStyle='rgba(129,140,248,'+(.20*(1-d/135))+')'; ctx.lineWidth=1; ctx.stroke(); }
+        }
+        const mdx=p.x-mouse.x, mdy=p.y-mouse.y, md=Math.hypot(mdx,mdy);
+        if(md<170){ ctx.beginPath(); ctx.moveTo(p.x,p.y); ctx.lineTo(mouse.x,mouse.y);
+          ctx.strokeStyle='rgba(56,189,248,'+(.35*(1-md/170))+')'; ctx.lineWidth=1; ctx.stroke(); }
+      }
+      requestAnimationFrame(draw);
+    }
+    addEventListener('resize',resize);
+    addEventListener('mousemove',e=>{mouse.x=e.clientX;mouse.y=e.clientY;});
+    addEventListener('mouseout',()=>{mouse.x=-999;mouse.y=-999;});
+    resize();
+    if(!reduce) draw(); else { /* static single frame */ draw(); }
+  })();
 </script>
 </body>
 </html>
