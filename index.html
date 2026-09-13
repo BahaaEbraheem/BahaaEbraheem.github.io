@@ -164,6 +164,22 @@ h1 .grad{background:var(--grad);-webkit-background-clip:text;background-clip:tex
 .stat .lbl{color:var(--muted);font-size:.86rem;margin-top:4px}
 @media(max-width:760px){.stats{grid-template-columns:repeat(2,1fr)}}
 
+/* ACHIEVEMENTS */
+.ach-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.ach-grid .ach:first-child{grid-column:1/-1}
+@media(max-width:760px){.ach-grid{grid-template-columns:1fr}}
+.ach{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:24px 26px;position:relative;overflow:hidden;transition:.25s}
+.ach:hover{transform:translateY(-4px);border-color:var(--accent);box-shadow:0 18px 50px -20px var(--glow)}
+.ach::after{content:"";position:absolute;top:-46px;right:-46px;width:130px;height:130px;background:var(--grad);opacity:.06;border-radius:50%}
+.ach .metric{font-family:'JetBrains Mono',monospace;font-size:1.95rem;font-weight:800;line-height:1.05;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.ach h3{font-size:1.02rem;font-weight:700;margin:7px 0 10px;letter-spacing:-.2px}
+.ach p{color:var(--muted);font-size:.93rem;line-height:1.66}
+.ach p a{color:var(--accent);border-bottom:1px solid rgba(56,189,248,.35);transition:.2s}
+.ach p a:hover{border-bottom-color:var(--accent);opacity:.85}
+.ach p code{font-family:'JetBrains Mono',monospace;font-size:.85em;color:var(--accent-3);background:var(--bg-soft);border:1px solid var(--border);padding:1px 5px;border-radius:4px}
+.ach .chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:15px}
+.ach .chips span{font-family:'JetBrains Mono',monospace;font-size:.74rem;color:var(--accent);background:rgba(56,189,248,.08);border:1px solid var(--border);padding:4px 9px;border-radius:6px}
+
 /* SECTIONS */
 section{padding:64px 0;scroll-margin-top:80px}
 .sec-head{display:flex;align-items:center;gap:14px;margin-bottom:38px}
@@ -285,6 +301,7 @@ footer{padding:34px 0;border-top:1px solid var(--border);text-align:center;color
     <a class="brand" href="#top"><span class="dot"></span>Bahaa Ebraheem</a>
     <div class="nav-links">
       <a href="#about">About</a>
+      <a href="#achievements">Achievements</a>
       <a href="#skills">Skills</a>
       <a href="#experience">Experience</a>
       <a href="#projects">Projects</a>
@@ -409,9 +426,53 @@ footer{padding:34px 0;border-top:1px solid var(--border);text-align:center;color
   </div>
 </section>
 
+<section id="achievements">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="sec-num">02</span><h2>Key Achievements</h2><span class="line"></span></div>
+    <div class="ach-grid">
+
+      <div class="ach reveal">
+        <div class="metric">223 GB &middot; 7&ndash;10 min</div>
+        <h3>Production storage migration</h3>
+        <p>Moved <strong>162,516 files</strong> off a nearly-full production disk &mdash; which also hosted the database &mdash; onto S3-compatible object storage, with a real outage window of only <strong>7&ndash;10 minutes</strong>; the long upload ran while the system stayed live. SHA-256 content-addressed deduplication proved <strong>38.4%</strong> of stored bytes were duplicates, cutting the upload from 223&nbsp;GB to 138&nbsp;GB. A full migrate-then-rollback rehearsal on a copy of real production data surfaced <strong>9 defects, all fixed before the live run</strong>.</p>
+        <div class="chips"><span>MinIO</span><span>Ceph RGW</span><span>SHA-256</span><span>Prometheus</span><span>Grafana</span></div>
+      </div>
+
+      <div class="ach reveal">
+        <div class="metric">40+ services</div>
+        <h3>National e-government platform</h3>
+        <p>Iraq&rsquo;s Companies Registrar, live at <a href="https://register.mot.gov.iq/" target="_blank" rel="noopener">register.mot.gov.iq</a>, runs on a no-code workflow engine: a visual React Flow designer lets registrars compose multi-step licensing services &mdash; incorporation, capital changes, liquidation, strike-off &mdash; without writing code.</p>
+        <div class="chips"><span>ASP.NET Core 8</span><span>React 18</span><span>SQL Server</span><span>Redis</span></div>
+      </div>
+
+      <div class="ach reveal">
+        <div class="metric">Zero rows migrated</div>
+        <h3>Storage microservice with no database</h3>
+        <p>The file service keeps no database: it takes bytes and returns one opaque key the calling application persists. MinIO and Ceph RADOS Gateway share a <strong>single code path</strong>, so changing the storage backend is one configuration entry rather than a data migration.</p>
+        <div class="chips"><span>.NET 10</span><span>S3-compatible</span><span>JWT HS256</span><span>Docker</span></div>
+      </div>
+
+      <div class="ach reveal">
+        <div class="metric">Syria-wide</div>
+        <h3>Remittance platform in national production</h3>
+        <p>EMPS moves money for <a href="https://www.facebook.com/harampyramid/" target="_blank" rel="noopener">Haram Internal Transfers</a> across <strong>every one of its service points in Syria</strong>. MISAgent, the Windows desktop bridge deployed at those points, gives the Blazor WebAssembly client the hardware a browser sandbox cannot reach &mdash; barcode scanners, label printers and flatbed scanners &mdash; streamed into the remittance workflow in real time.</p>
+        <div class="chips"><span>ASP.NET Core 7</span><span>ABP</span><span>Blazor WASM</span><span>SignalR</span></div>
+      </div>
+
+      <div class="ach reveal">
+        <div class="metric">117 ms &rarr; 24 ms</div>
+        <h3>Search performance and a closed data leak</h3>
+        <p>Cut search-count latency <strong>~5&times;</strong> across 50,000 job records with PostgreSQL <code>pg_trgm</code> GIN indexes &mdash; the count, not the fetch, was the bottleneck, because <code>LIMIT</code> never helps it. Separately, found and closed a SignalR broadcast that leaked <strong>every user&rsquo;s events to every connected client</strong>.</p>
+        <div class="chips"><span>PostgreSQL</span><span>pg_trgm</span><span>SignalR</span><span>Redis cache</span></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <section id="skills">
   <div class="wrap">
-    <div class="sec-head reveal"><span class="sec-num">02</span><h2>Technical Skills</h2><span class="line"></span></div>
+    <div class="sec-head reveal"><span class="sec-num">03</span><h2>Technical Skills</h2><span class="line"></span></div>
     <div class="skill-grid">
       <div class="skill-card reveal">
         <h3><span class="ico">⚙️</span> Backend</h3>
@@ -466,7 +527,7 @@ footer{padding:34px 0;border-top:1px solid var(--border);text-align:center;color
 
 <section id="experience">
   <div class="wrap">
-    <div class="sec-head reveal"><span class="sec-num">03</span><h2>Experience</h2><span class="line"></span></div>
+    <div class="sec-head reveal"><span class="sec-num">04</span><h2>Experience</h2><span class="line"></span></div>
     <div class="timeline">
 
       <div class="job reveal">
@@ -609,7 +670,7 @@ footer{padding:34px 0;border-top:1px solid var(--border);text-align:center;color
 
 <section id="projects">
   <div class="wrap">
-    <div class="sec-head reveal"><span class="sec-num">04</span><h2>Featured Projects</h2><span class="line"></span></div>
+    <div class="sec-head reveal"><span class="sec-num">05</span><h2>Featured Projects</h2><span class="line"></span></div>
     <div class="feat-grid">
       <div class="feat reveal" id="chance4hire">
         <div class="ficon">🎯</div>
@@ -635,7 +696,7 @@ footer{padding:34px 0;border-top:1px solid var(--border);text-align:center;color
 
 <section id="education">
   <div class="wrap">
-    <div class="sec-head reveal"><span class="sec-num">05</span><h2>Education &amp; Languages</h2><span class="line"></span></div>
+    <div class="sec-head reveal"><span class="sec-num">06</span><h2>Education &amp; Languages</h2><span class="line"></span></div>
     <div class="two-col">
       <div class="panel reveal">
         <h3>🎓 Education</h3>
