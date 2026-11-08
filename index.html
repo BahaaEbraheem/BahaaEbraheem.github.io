@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Bahaa Ebraheem — Senior Full Stack Engineer</title>
-<meta name="description" content="Bahaa Ebraheem — Senior Full Stack Engineer with 7+ years building scalable web apps with ASP.NET Core, React, Blazor, SQL Server, and AI integrations." />
+<title>Bahaa Ebraheem — Senior Full Stack &amp; AI Engineer</title>
+<meta name="description" content="Bahaa Ebraheem — Senior Full Stack &amp; AI Engineer with 7+ years: ASP.NET Core, React, Python, LLM integration (Gemini, OpenAI, Claude), AI agents and bilingual Arabic/English NLP." />
 <meta name="author" content="Bahaa Ebraheem" />
 
 <!-- Open Graph / social preview -->
@@ -95,7 +95,8 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:6
 /* HERO */
 header{padding:80px 0 70px;position:relative}
 .hero-grid{display:grid;grid-template-columns:1.25fr .9fr;gap:50px;align-items:center}
-@media(max-width:900px){.hero-grid{grid-template-columns:1fr;gap:46px}}
+@media(max-width:900px){.hero-grid{grid-template-columns:minmax(0,1fr);gap:46px}}
+.hero-grid>*{min-width:0}
 
 /* code window visual */
 .hero-visual{position:relative}
@@ -248,6 +249,10 @@ a.co:hover{border-bottom-color:var(--accent)}
 .socials a svg{width:20px;height:20px}
 
 /* FEATURED */
+.pl{margin:10px 0 6px 18px;padding:0;display:grid;gap:7px;color:var(--muted);line-height:1.6}
+.pl strong{color:var(--text)}
+.feat p a,.ach p a{color:var(--accent);overflow-wrap:anywhere}
+.pl code{overflow-wrap:anywhere}
 .feat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
 @media(max-width:760px){.feat-grid{grid-template-columns:1fr}}
 .feat{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:28px;position:relative;overflow:hidden;transition:.25s}
@@ -316,12 +321,13 @@ footer{padding:34px 0;border-top:1px solid var(--border);text-align:center;color
    <div class="hero-grid">
     <div class="hero-text">
     <div class="eyebrow"><span class="pulse"></span> Available for opportunities</div>
-    <h1>Bahaa Ebraheem<br><span class="grad">Senior Full Stack Engineer</span></h1>
+    <h1>Bahaa Ebraheem<br><span class="grad">Senior Full Stack &amp; AI Engineer</span></h1>
     <p class="role">I build <span id="rotate" class="rotate-text"></span><span class="type-cursor"></span></p>
     <p class="lead">
-      Senior Full Stack Engineer with <strong>7+ years</strong> of hands-on experience building
-      scalable web applications. Strong in backend architecture, API integration, real-time systems,
-      and AI-powered products — delivering features end-to-end across enterprise, award, and SaaS platforms.
+      Senior Full Stack &amp; AI Engineer with <strong>7+ years</strong> building production systems on
+      ASP.NET Core, React and Python. I ship AI end to end: LLM features on <strong>Gemini, OpenAI and Claude</strong>,
+      tool-calling AI booking agents on WhatsApp and Telegram, AI image pipelines, and a bilingual Arabic/English NLP service that
+      screens CVs at <strong>F1 0.986</strong> against 0.707 for a keyword ATS.
     </p>
     <div class="hero-cta">
       <a class="btn btn-primary" href="#contact">
@@ -353,7 +359,7 @@ footer{padding:34px 0;border-top:1px solid var(--border);text-align:center;color
       <div class="float-badges">
         <div class="fbadge b1">⚡ ASP.NET Core</div>
         <div class="fbadge b2">⚛ React 19</div>
-        <div class="fbadge b3">🤖 AI / Gemini</div>
+        <div class="fbadge b3">🤖 LLMs · AI Agents</div>
       </div>
       <div class="code-win">
         <div class="code-top">
@@ -363,11 +369,11 @@ footer{padding:34px 0;border-top:1px solid var(--border);text-align:center;color
         <div class="code-body">
 <span class="ln"><span class="c-key">const</span> <span class="c-prop">developer</span> <span class="c-pun">=</span> <span class="c-pun">{</span></span>
 <span class="ln">  <span class="c-prop">name</span><span class="c-pun">:</span> <span class="c-str">"Bahaa Ebraheem"</span><span class="c-pun">,</span></span>
-<span class="ln">  <span class="c-prop">role</span><span class="c-pun">:</span> <span class="c-str">"Senior Full Stack Engineer"</span><span class="c-pun">,</span></span>
+<span class="ln">  <span class="c-prop">role</span><span class="c-pun">:</span> <span class="c-str">"Senior Full Stack &amp; AI Engineer"</span><span class="c-pun">,</span></span>
 <span class="ln">  <span class="c-prop">experience</span><span class="c-pun">:</span> <span class="c-str">"7+ years"</span><span class="c-pun">,</span></span>
-<span class="ln">  <span class="c-prop">stack</span><span class="c-pun">:</span> <span class="c-pun">[</span><span class="c-str">"ASP.NET Core"</span><span class="c-pun">,</span> <span class="c-str">"React"</span><span class="c-pun">,</span> <span class="c-str">"Blazor"</span><span class="c-pun">]</span><span class="c-pun">,</span></span>
+<span class="ln">  <span class="c-prop">stack</span><span class="c-pun">:</span> <span class="c-pun">[</span><span class="c-str">"ASP.NET Core"</span><span class="c-pun">,</span> <span class="c-str">"React"</span><span class="c-pun">,</span> <span class="c-str">"Python"</span><span class="c-pun">]</span><span class="c-pun">,</span></span>
 <span class="ln">  <span class="c-prop">infra</span><span class="c-pun">:</span> <span class="c-pun">[</span><span class="c-str">"Docker"</span><span class="c-pun">,</span> <span class="c-str">"Ceph"</span><span class="c-pun">,</span> <span class="c-str">"MinIO"</span><span class="c-pun">]</span><span class="c-pun">,</span></span>
-<span class="ln">  <span class="c-prop">ai</span><span class="c-pun">:</span> <span class="c-pun">[</span><span class="c-str">"Gemini"</span><span class="c-pun">,</span> <span class="c-str">"OpenAI"</span><span class="c-pun">]</span><span class="c-pun">,</span></span>
+<span class="ln">  <span class="c-prop">ai</span><span class="c-pun">:</span> <span class="c-pun">[</span><span class="c-str">"Gemini"</span><span class="c-pun">,</span> <span class="c-str">"OpenAI"</span><span class="c-pun">,</span> <span class="c-str">"Claude"</span><span class="c-pun">,</span> <span class="c-str">"BERT"</span><span class="c-pun">]</span><span class="c-pun">,</span></span>
 <span class="ln">  <span class="c-prop">openToWork</span><span class="c-pun">:</span> <span class="c-key">true</span></span>
 <span class="ln"><span class="c-pun">}</span><span class="c-pun">;</span></span>
 <span class="ln"></span>
@@ -383,7 +389,7 @@ footer{padding:34px 0;border-top:1px solid var(--border);text-align:center;color
     <div class="stats">
       <div class="stat"><div class="num">7+</div><div class="lbl">Years Experience</div></div>
       <div class="stat"><div class="num">18+</div><div class="lbl">Projects Delivered</div></div>
-      <div class="stat"><div class="num">5</div><div class="lbl">Award Platforms</div></div>
+      <div class="stat"><div class="num">3</div><div class="lbl">LLM Providers in Production</div></div>
       <div class="stat"><div class="num">MSc</div><div class="lbl">Web Science</div></div>
     </div>
   </div>
@@ -395,15 +401,17 @@ footer{padding:34px 0;border-top:1px solid var(--border);text-align:center;color
     <div class="about-grid">
       <div class="reveal">
         <p>
-          I'm a Senior Full Stack Engineer focused on building <strong>robust, scalable systems</strong> with
-          ASP.NET Core, React, and Blazor. I enjoy owning features end-to-end — from clean backend
+          I'm a Senior Full Stack &amp; AI Engineer focused on building <strong>robust, scalable systems</strong> with
+          ASP.NET Core, React and Python — and on putting <strong>LLMs and NLP into production</strong>, not demos. I enjoy owning features end-to-end — from clean backend
           architecture and API design to polished, performant frontends.
         </p>
         <p>
           Over the past seven years I've contributed to <strong>government award portals</strong>,
           a <strong>national companies-registrar platform</strong> for Iraq's Ministry of Trade,
           <strong>enterprise remittance systems</strong>, real-time applications, and
-          <strong>AI-powered SaaS products</strong> integrating Google Gemini and OpenAI. I also carved a
+          <strong>AI-powered SaaS products</strong> running Google Gemini, OpenAI and Anthropic Claude behind one
+          provider-agnostic layer, plus a conversational AI booking agent. For my MSc I built a bilingual
+          Arabic/English CV-screening NLP service with multilingual BERT, measured against keyword ATS baselines. I also carved a
           <strong>storage microservice</strong> out of a monolith and migrated 162,516 production files
           (223&nbsp;GB) onto Ceph/MinIO object storage with a 7–10 minute outage window. I care about
           clean architecture, concurrency-safe logic, and shipping software that holds up under real load.
@@ -417,7 +425,7 @@ footer{padding:34px 0;border-top:1px solid var(--border);text-align:center;color
         <h4>Quick Info</h4>
         <div class="info-row"><span class="k">Location</span><span class="v">Damascus, Syria</span></div>
         <div class="info-row"><span class="k">Experience</span><span class="v">7+ Years</span></div>
-        <div class="info-row"><span class="k">Role</span><span class="v">Senior FS Engineer</span></div>
+        <div class="info-row"><span class="k">Role</span><span class="v">Senior FS &amp; AI Engineer</span></div>
         <div class="info-row"><span class="k">Work mode</span><span class="v">Remote / Hybrid</span></div>
         <div class="info-row"><span class="k">Languages</span><span class="v">EN · AR</span></div>
         <div class="info-row"><span class="k">Status</span><span class="v" style="color:var(--accent-3)">Open to work</span></div>
@@ -430,6 +438,34 @@ footer{padding:34px 0;border-top:1px solid var(--border);text-align:center;color
   <div class="wrap">
     <div class="sec-head reveal"><span class="sec-num">02</span><h2>Key Achievements</h2><span class="line"></span></div>
     <div class="ach-grid">
+
+      <div class="ach reveal">
+        <div class="metric">Gemini &middot; OpenAI &middot; Claude</div>
+        <h3>Multi-LLM platform in production</h3>
+        <p>New Look runs <strong>Google Gemini, OpenAI and Anthropic Claude</strong> behind one provider-agnostic AI layer: providers and models switch from an admin registry with <strong>no redeploy</strong>, prompts are admin-editable templates, and slow image generations run in a <strong>background job queue</strong> so the UI never blocks. Gemini generates 8 personalized hairstyle suggestions from 6-angle client photos, with AI face-shape analysis, consultation chat, service plans and package recommendations.</p>
+        <div class="chips"><span>Google Gemini</span><span>OpenAI</span><span>Anthropic Claude</span><span>Prompt Engineering</span><span>AI Image Generation</span><span>Background Jobs</span></div>
+      </div>
+
+      <div class="ach reveal">
+        <div class="metric">F1 0.986 vs 0.707</div>
+        <h3>Bilingual AI CV screening (MSc thesis)</h3>
+        <p>Chance4Hire&rsquo;s Python/FastAPI NLP service ranks candidates with a <strong>multilingual BERT</strong> sentence encoder. On a 40-CV gold set it reaches <strong>F1 0.986</strong> against 0.707 for a naive keyword ATS, and lifts Arabic skill recall from <strong>26.5% to 100%</strong>. <a href="https://github.com/BahaaEbraheem/chance4hire-ai-service" target="_blank" rel="noopener">Open source on GitHub</a>.</p>
+        <div class="chips"><span>Python</span><span>FastAPI</span><span>Sentence-Transformers</span><span>PyTorch</span><span>Arabic NLP</span></div>
+      </div>
+
+      <div class="ach reveal">
+        <div class="metric">16 API tools</div>
+        <h3>AI booking agents on WhatsApp &amp; Telegram</h3>
+        <p>Integrated New Look with <strong>Callivox</strong>: tool-calling LLM bots on <strong>WhatsApp and Telegram</strong> that <strong>book, reschedule, cancel and delete appointments</strong> (including group bookings) and answer availability, service, invoice, payment and account questions through <strong>16 secured API tools</strong> with client verification &mdash; plus the Callivox inbox embedded in the staff app.</p>
+        <div class="chips"><span>AI Agents</span><span>Tool Calling</span><span>WhatsApp</span><span>Telegram</span><span>Callivox</span><span>API-key gate</span></div>
+      </div>
+
+      <div class="ach reveal">
+        <div class="metric">17 categories &middot; 0 differences</div>
+        <h3>Zero-discrepancy migration off Fresha</h3>
+        <p>Built the tool that moved a live salon&rsquo;s full history from Fresha &mdash; clients, visits, service lines, invoices, payments, gift cards, packages and stock. An automated audit matched <strong>all 17 categories with zero differences</strong>.</p>
+        <div class="chips"><span>C#</span><span>Python audit</span><span>PostgreSQL</span><span>Data Migration</span></div>
+      </div>
 
       <div class="ach reveal">
         <div class="metric">223 GB &middot; 7&ndash;10 min</div>
@@ -491,17 +527,32 @@ footer{padding:34px 0;border-top:1px solid var(--border);text-align:center;color
         </div>
       </div>
       <div class="skill-card reveal">
-        <h3><span class="ico">🤖</span> AI &amp; Integrations</h3>
+        <h3><span class="ico">🤖</span> AI &amp; LLM</h3>
         <div class="tags">
-          <span class="tag">Google Gemini</span><span class="tag">OpenAI API</span><span class="tag">Prompt Engineering</span>
-          <span class="tag">AI Image Generation</span><span class="tag">Background AI Jobs</span><span class="tag">WhatsApp Business API</span>
+          <span class="tag">Google Gemini</span><span class="tag">OpenAI GPT</span><span class="tag">Anthropic Claude</span>
+          <span class="tag">AI Agents &amp; Tool Calling</span><span class="tag">Prompt Engineering</span><span class="tag">Multi-provider AI</span>
+          <span class="tag">AI Image Generation</span><span class="tag">Background AI Jobs</span>
+        </div>
+      </div>
+      <div class="skill-card reveal">
+        <h3><span class="ico">🧠</span> NLP &amp; Machine Learning</h3>
+        <div class="tags">
+          <span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">Transformers / BERT</span><span class="tag">Sentence-Transformers</span>
+          <span class="tag">Hugging Face</span><span class="tag">PyTorch</span><span class="tag">Embeddings</span><span class="tag">Arabic NLP</span>
+          <span class="tag">Document AI (PDF)</span><span class="tag">Model Evaluation (P / R / F1)</span>
+        </div>
+      </div>
+      <div class="skill-card reveal">
+        <h3><span class="ico">🔌</span> Integrations</h3>
+        <div class="tags">
+          <span class="tag">Callivox</span><span class="tag">WhatsApp Business API</span><span class="tag">Firebase Cloud Messaging</span>
           <span class="tag">Webhooks</span><span class="tag">OpenTelemetry</span>
         </div>
       </div>
       <div class="skill-card reveal">
         <h3><span class="ico">📱</span> Mobile &amp; Desktop</h3>
         <div class="tags">
-          <span class="tag">Flutter</span><span class="tag">Electron</span><span class="tag">Windows Forms (C#)</span>
+          <span class="tag">Flutter (Android &amp; iOS)</span><span class="tag">Firebase push</span><span class="tag">Electron</span><span class="tag">Windows Forms (C#)</span>
         </div>
       </div>
       <div class="skill-card reveal">
@@ -517,8 +568,8 @@ footer{padding:34px 0;border-top:1px solid var(--border);text-align:center;color
           <span class="tag">Docker</span><span class="tag">Azure DevOps</span><span class="tag">AWS</span>
           <span class="tag">Ceph RGW</span><span class="tag">MinIO</span><span class="tag">S3-compatible storage</span>
           <span class="tag">Prometheus</span><span class="tag">Grafana</span><span class="tag">Serilog</span>
-          <span class="tag">CI/CD</span><span class="tag">Clean Architecture</span><span class="tag">CQRS</span>
-          <span class="tag">DDD</span><span class="tag">xUnit</span><span class="tag">Agile/Scrum</span>
+          <span class="tag">CI/CD</span><span class="tag">TFS</span><span class="tag">PowerShell</span><span class="tag">Clean Architecture</span><span class="tag">CQRS</span>
+          <span class="tag">DDD</span><span class="tag">Double-entry Accounting</span><span class="tag">Data Migration</span><span class="tag">xUnit</span><span class="tag">Agile/Scrum</span>
         </div>
       </div>
     </div>
@@ -535,7 +586,7 @@ footer{padding:34px 0;border-top:1px solid var(--border);text-align:center;color
           <div class="logo-chip"><img src="assets/ha.png" alt="HA Consultancy logo" loading="lazy"></div>
           <div class="job-head-text">
             <div class="job-top">
-              <h3>Senior Full Stack Engineer · <a class="co" href="https://ha-consultancy.com/" target="_blank" rel="noopener">HA Consultancy ↗</a></h3>
+              <h3>Full Stack Developer (AI &amp; LLM focus) · <a class="co" href="https://ha-consultancy.com/" target="_blank" rel="noopener">HA Consultancy ↗</a></h3>
               <span class="when">06/2026 – Present</span>
             </div>
             <div class="loc">UAE · Remote</div>
@@ -543,8 +594,20 @@ footer{padding:34px 0;border-top:1px solid var(--border);text-align:center;color
         </div>
         <div class="proj">
           <div class="pt"><a href="https://newlook.ha-consultancy.com/" target="_blank" rel="noopener">New Look <svg class="ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></a> <span class="badge">AI · SaaS</span></div>
-          <p>AI-powered grooming &amp; salon-management platform (a Fresha alternative) with smart consultations and quality control. Integrated Google Gemini 3.1 (Pro + image model) to generate 8 personalized hairstyle suggestions from 6-angle client photos, plus AI face-shape analysis and AI-driven service plans. Real-time updates, WhatsApp Business API delivery, multi-branch role-based access, and an Electron chair-station with OBSBot camera.</p>
-          <div class="chips"><span>ASP.NET Core</span><span>React 19</span><span>TypeScript</span><span>SignalR</span><span>Google Gemini</span><span>Electron</span></div>
+          <p>AI-powered salon-management platform (a Fresha alternative) on ASP.NET Core 10, React 19 / TypeScript, PostgreSQL and SignalR: multi-branch role-based access, WhatsApp Business API, and an Electron chair-station with an OBSBot camera.</p>
+          <ul class="pl">
+            <li><strong>AI integration (Gemini, OpenAI, Claude)</strong> &mdash; Gemini Pro + image model generate 8 personalized hairstyle suggestions from 6-angle client photos, with AI face-shape analysis, consultation chat, service plans and package recommendations; one provider-agnostic layer with a background AI job queue and admin-editable prompts.</li>
+            <li><strong>Callivox AI agents (WhatsApp &amp; Telegram)</strong> &mdash; tool-calling LLM bots that book, reschedule, cancel and delete appointments and answer availability, invoice and account questions, over 16 secured public API tools with an API-key gate and client verification by code; Callivox inbox embedded in the app.</li>
+            <li><strong>Fresha migration</strong> &mdash; migration tool with an automated audit (C# + Python) that moved the live salon&rsquo;s full history off Fresha with zero differences across 17 audited categories.</li>
+            <li><strong>Database audit trail</strong> &mdash; 94 deferred PostgreSQL triggers capture every change with the user, route and request id into an outbox; a background shipper moves it, idempotently and with <code>SKIP LOCKED</code>, into a separate month-partitioned audit database.</li>
+            <li><strong>Commission engine</strong> &mdash; fixed and tiered commission ladders; a set-based SQL backfill rebuilt <strong>the full commission history</strong> on production in <strong>2 minutes instead of 4.6 hours</strong>, after a real dry run inside a rolled-back transaction.</li>
+            <li><strong>Automations &amp; messaging</strong> &mdash; a reminder engine (before-appointment, booking events, waitlist and client-segment triggers) sends WhatsApp and email with quick-reply buttons (Confirm / Not coming / Reschedule); every message is a versioned template, with the full Meta WhatsApp approval cycle driven from the app.</li>
+            <li><strong>Fine-grained permissions</strong> &mdash; 105 role permissions, each one verified on its own screen with the tick off and on.</li>
+            <li><strong>Payroll &amp; finance</strong> &mdash; pay runs with transfer history and safe-to-pay checks against advances and deductions, tips, time clock and wage rates, client wallet, gift cards, subscriptions, and a ledger-only inventory.</li>
+            <li><strong>Accounting system (Business Central model)</strong> &mdash; general ledger with chart of accounts, account categories, parent/child hierarchy and opening balances; a journal engine with templates, approval, posting and reversal that keeps the audit history; and configurable posting groups mapping items, service categories, customer groups and payment methods to G/L accounts, with posting validation and restrictions.</li>
+            <li><strong>Mobile app (Android &amp; iOS)</strong> &mdash; Flutter app for barbers and clients: role-based sign-in, appointment calendar, and Firebase push notifications with real-time updates over SignalR.</li>
+          </ul>
+          <div class="chips"><span>ASP.NET Core 10</span><span>React 19</span><span>PostgreSQL</span><span>Gemini</span><span>OpenAI</span><span>Claude</span><span>Callivox</span><span>Flutter</span><span>Firebase</span></div>
         </div>
         <div class="proj">
           <div class="pt"><a href="https://newlook.ha-consultancy.com/#/online-booking" target="_blank" rel="noopener">Online Booking Portal <svg class="ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></a> <span class="badge">Live</span></div>
@@ -672,11 +735,18 @@ footer{padding:34px 0;border-top:1px solid var(--border);text-align:center;color
   <div class="wrap">
     <div class="sec-head reveal"><span class="sec-num">05</span><h2>Featured Projects</h2><span class="line"></span></div>
     <div class="feat-grid">
-      <div class="feat reveal" id="chance4hire">
+      <div class="feat reveal" id="chance4hire" style="grid-column:1/-1">
         <div class="ficon">🎯</div>
-        <h3>Chance4Hire</h3>
-        <p>A recruitment platform on ASP.NET Core / ABP, React 19, PostgreSQL and Redis. Multi-company data isolation is enforced at the query layer and proven by tests that fail when the isolation is removed. Search-count latency was cut from <strong>117&nbsp;ms to 24&nbsp;ms</strong> across 50,000 job records using PostgreSQL <code>pg_trgm</code> GIN indexes, and job pages are served with <code>JobPosting</code> JSON-LD so listings are indexable by Google for Jobs.</p>
-        <div class="chips"><span>ASP.NET Core</span><span>ABP</span><span>React 19</span><span>PostgreSQL</span><span>Redis</span><span>pg_trgm</span></div>
+        <h3>Chance4Hire &mdash; AI recruitment platform &amp; MSc thesis</h3>
+        <p>Bilingual (Arabic/English) CV screening and candidate ranking. AI service (public): <a href="https://github.com/BahaaEbraheem/chance4hire-ai-service" target="_blank" rel="noopener">github.com/BahaaEbraheem/chance4hire-ai-service</a></p>
+        <ul class="pl">
+          <li><strong>NLP / Transformer matching</strong> &mdash; Python + FastAPI microservice; a multilingual BERT sentence encoder (<code>paraphrase-multilingual-MiniLM-L12-v2</code> on Sentence-Transformers / PyTorch) scores CV-to-job fit semantically, cross-lingual and paraphrase-tolerant, while skill extraction stays explainable through a bilingual gazetteer with Arabic normalization.</li>
+          <li><strong>Measured, not claimed</strong> &mdash; evaluation harness on a 40-CV gold set (142 skills; Arabic, English and code-switched): <strong>F1 0.986</strong> vs 0.707 for a naive keyword ATS and 0.767 for a tuned one, Arabic recall 100% vs 26.5%, an ablation study, error analysis and latency tracking (avg 530&nbsp;ms).</li>
+          <li><strong>Document AI</strong> &mdash; Arabic-aware PDF extraction (PyMuPDF recovers 12/13 skills vs 8/13 with pdfplumber), scanned-PDF detection, education and years-of-experience extraction including Arabic number words, and profile auto-fill from the uploaded CV.</li>
+          <li><strong>AI in production</strong> &mdash; the .NET backend calls the AI service through a resilient analyzer that falls back to a local engine if the service fails; live analysis progress streams over SignalR; recruiters keep the final decision with notes and feedback, and an accuracy dashboard reports the model&rsquo;s metrics.</li>
+          <li><strong>Platform</strong> &mdash; ASP.NET Core / ABP (DDD), React 19, PostgreSQL, Redis, Docker; multi-company isolation proven by tests; search latency cut from 117&nbsp;ms to 24&nbsp;ms with <code>pg_trgm</code> GIN indexes; <code>JobPosting</code> JSON-LD for Google for Jobs.</li>
+        </ul>
+        <div class="chips"><span>Python</span><span>FastAPI</span><span>BERT</span><span>Sentence-Transformers</span><span>PyTorch</span><span>Arabic NLP</span><span>ASP.NET Core</span><span>ABP</span><span>React 19</span><span>SignalR</span></div>
       </div>
       <div class="feat reveal">
         <div class="ficon">🔔</div>
@@ -734,7 +804,7 @@ footer{padding:34px 0;border-top:1px solid var(--border);text-align:center;color
   <div class="wrap">
     <div class="contact reveal">
       <h2>Let's build something great</h2>
-      <p>I'm open to senior full stack and backend roles, remote or hybrid. Feel free to reach out — I usually reply quickly.</p>
+      <p>I'm open to senior full stack, backend and AI engineering roles, remote or hybrid. Feel free to reach out — I usually reply quickly.</p>
       <div class="contact-links">
         <a class="btn btn-primary" href="mailto:Bahaa.Ebraheem812@Gmail.com">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg>
@@ -763,7 +833,7 @@ footer{padding:34px 0;border-top:1px solid var(--border);text-align:center;color
 
 <footer>
   <div class="wrap">
-    © <span id="yr">2026</span> Bahaa Ebraheem · Senior Full Stack Engineer · Built with care.
+    © <span id="yr">2026</span> Bahaa Ebraheem · Senior Full Stack &amp; AI Engineer · Built with care.
   </div>
 </footer>
 
@@ -777,7 +847,7 @@ footer{padding:34px 0;border-top:1px solid var(--border);text-align:center;color
 
   // typewriter rotating role
   (function(){
-    const words=["Full Stack apps.","scalable backends.",".NET & React systems.","AI-powered products.","clean architecture."];
+    const words=["LLM-powered products.","AI agents with tools.","bilingual NLP services.","scalable .NET & React systems.","clean architecture."];
     const el=document.getElementById('rotate');
     let wi=0,ci=0,del=false;
     function type(){
